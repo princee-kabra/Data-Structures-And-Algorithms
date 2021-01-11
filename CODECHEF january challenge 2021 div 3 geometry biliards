@@ -1,0 +1,31 @@
+  #include<bits/stdc++.h>
+
+using namespace std;
+int main(){
+	long long t;
+	cin>>t;
+	while(t--)
+	{ 
+	long long  n,k,x,y,X,Y,j;
+	cin>>n>>k>>x>>y;
+	vector<pair<long long,long long> >vect;
+	long long T=max(x,y);
+	X=x+abs(T-n);
+	Y=y+abs(T-n);
+     if(X==Y){
+     	cout<<n<<" "<<n<<endl;
+}
+else{
+   vect.push_back({X,Y});
+   vect.push_back({Y,X});
+   vect.push_back({abs(X-n),abs(Y-n)});
+   vect.push_back({ abs(Y-n),abs(X-n)});
+   int i;
+   i=(k-1)%4;
+   cout<<vect[i].first<<" "<<vect[i].second<<endl;
+   
+}
+}
+
+	return 0;
+}
