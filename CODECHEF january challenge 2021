@@ -1,0 +1,42 @@
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<sstream>
+using namespace std;
+int bin(string q){
+		stringstream nu(q);
+		int x=0;
+		nu>>x;
+		int v=0,base=1;
+        
+		while(x!=0){
+			int l=x%10;
+			x=x/10;
+			v=v+l*base;
+			base=base*2;
+		}
+		return v;	
+}
+int main(){
+	
+	int t;
+	cin>>t;
+	while(t--){
+		long long n;
+		cin>>n;
+		string z;
+		cin>>z;
+		string temp;
+		for(int i=0;i<z.size();i++){
+			temp+=z[i];
+			if(temp.size()==4){
+				int Y=bin(temp);
+				char c=char(97+Y);
+	       cout<<c;
+	temp.clear();
+	}
+	}
+	cout<<endl;
+}
+	return 0;
+}
